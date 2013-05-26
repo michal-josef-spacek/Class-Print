@@ -6,7 +6,7 @@ use warnings;
 use inc::Module::Install;
 
 # Definition.
-abstract 'Class print class and utilities.';
+abstract 'Perl class for helping of object information print.';
 author 'Michal Špaček <skim@cpan.org>';
 license 'bsd';
 name 'Class-Print';
