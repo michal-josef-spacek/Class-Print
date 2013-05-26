@@ -97,7 +97,7 @@ Class::Print::Utils - Class::Print utilities.
 
  use Class::Print::Utils qw(print_one print_value);
  my $ret = print_one($self, $key, $text, $indent, $value_callback);
- my $ret = print_value($self, $value);
+ my $ret = print_value($value);
 
 =head1 SUBROUTINES
 
@@ -117,8 +117,9 @@ Class::Print::Utils - Class::Print utilities.
 
  Get printable serialization of value.
  Supported values are:
- - scalar
- - array
+ - scalar - Print scalar.
+ - array - Print array as join ', ', @array.
+ - object - Print object->id.
  Returns string with value serialization.
 
 =back
@@ -193,7 +194,7 @@ L<Scalar::Util>.
 
 =head1 SEE ALSO
 
-TODO
+L<Class::Print>.
 
 =head1 AUTHOR
 
