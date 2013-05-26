@@ -5,27 +5,19 @@ use strict;
 use warnings;
 
 # Modules.
-use Indent;
-use Class::Print::Utils qw(print_one);
+use Class::Print;
 
 # Object.
-my $self = {
-        'type' => 'LS_XXX01',
-        'name' => 'Test LS_XXX01',
-};
+my $obj = Class::Print->new;
+
+# Example class.
+my $example = bless { 'id' => 0001 }, 'Example';
 
 # Print out.
-print print_one($self, 'type', 'Foo')."\n";
-print print_one($self, 'name', 'Bar', Indent->new('indent' => 'XXX'))."\n";
-print print_one($self, 'name', 'Bar', undef, sub {
-        my ($self, $value) = @_;
-        if ($value eq 'Test LS_XXX01') {
-                return 'Foo bar';
-        }
-        return;
-})."\n";
+print scalar $obj->print($example, [
+        ['id', 'Identification'],
+]);
+print "\n";
 
 # Output:
-# Foo: LS_XXX01
-# XXXBar: Test LS_XXX01
-# Bar: Foo bar
+# Identification: 1
