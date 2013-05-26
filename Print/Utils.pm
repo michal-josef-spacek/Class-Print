@@ -95,7 +95,7 @@ Class::Print::Utils - Class::Print utilities.
 
 =head1 SYNOPSIS
 
- use LS::Utils qw(print_one print_value);
+ use Class::Print::Utils qw(print_one print_value);
  my $ret = print_one($self, $key, $text, $indent, $value_callback);
  my $ret = print_value($self, $value);
 
