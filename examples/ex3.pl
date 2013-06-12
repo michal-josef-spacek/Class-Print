@@ -29,7 +29,9 @@ my $obj = Object->new;
 # Print out.
 print print_value('scalar')."\n";
 print print_value([1, 2])."\n";
-print print_value($obj);
+print print_value($obj)."\n";
 
 # Output.
-# TODO
+# scalar
+# 1, 2
+# 0001
