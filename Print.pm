@@ -119,7 +119,7 @@ Class::Print - Perl class for helping of object information print.
  my $obj = Class::Print->new;
 
  # Example class.
- my $example = bless { 'id' => 0001 }, 'Example';
+ my $example = bless { 'id' => '0001' }, 'Example';
 
  # Print out.
  print scalar $obj->print($example, [
@@ -128,7 +128,7 @@ Class::Print - Perl class for helping of object information print.
  print "\n";
 
  # Output:
- # Identification: 1
+ # Identification: 0001
 
 =head1 DEPENDENCIES
 

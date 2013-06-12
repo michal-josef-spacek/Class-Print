@@ -11,7 +11,7 @@ use Class::Print;
 my $obj = Class::Print->new;
 
 # Example class.
-my $example = bless { 'id' => 0001 }, 'Example';
+my $example = bless { 'id' => '0001' }, 'Example';
 
 # Print out.
 print scalar $obj->print($example, [
@@ -20,4 +20,4 @@ print scalar $obj->print($example, [
 print "\n";
 
 # Output:
-# Identification: 1
+# Identification: 0001
