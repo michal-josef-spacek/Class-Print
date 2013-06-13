@@ -5,27 +5,24 @@ use strict;
 use warnings;
 
 # Modules.
-use Indent;
-use Class::Print::Utils qw(print_one);
+use Class::Print;
+use Dumpvalue;
 
 # Object.
-my $self = {
-        'type' => 'LS_XXX01',
-        'name' => 'Test LS_XXX01',
-};
+my $obj = Class::Print->new;
 
-# Print out.
-print print_one($self, 'type', 'Foo')."\n";
-print print_one($self, 'name', 'Bar', Indent->new('indent' => 'XXX'))."\n";
-print print_one($self, 'name', 'Bar', undef, sub {
-        my ($self, $value) = @_;
-        if ($value eq 'Test LS_XXX01') {
-                return 'Foo bar';
-        }
-        return;
-})."\n";
+# Example class.
+my $example = bless { 'id' => '0001' }, 'Example';
+
+# Get output.
+my @ret = $obj->print($example, [
+        ['id', 'Identification'],
+]);
+
+# Dump out.
+my $dump = Dumpvalue->new;
+$dump->dumpValues(\@ret);
 
 # Output:
-# Foo: LS_XXX01
-# XXXBar: Test LS_XXX01
-# Bar: Foo bar
+# 0  ARRAY(0x2580d00)
+#   0  'Identification: 0001'

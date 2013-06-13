@@ -6,32 +6,26 @@ use warnings;
 
 # Modules.
 use Indent;
-use Class::Print::Utils qw(print_value);
+use Class::Print::Utils qw(print_one);
 
-package Object;
-
-# Constructor.
-sub new {
-        return bless { 'id' => '0001' }, 'Object';
-}
-
-# Id.
-sub id {
-        my $self = shift;
-        return $self->{'id'}; 
-}
-
-package main;
-
-# Create object.
-my $obj = Object->new;
+# Object.
+my $self = {
+        'type' => 'LS_XXX01',
+        'name' => 'Test LS_XXX01',
+};
 
 # Print out.
-print print_value('scalar')."\n";
-print print_value([1, 2])."\n";
-print print_value($obj)."\n";
+print print_one($self, 'type', 'Foo')."\n";
+print print_one($self, 'name', 'Bar', Indent->new('indent' => 'XXX'))."\n";
+print print_one($self, 'name', 'Bar', undef, sub {
+        my ($self, $value) = @_;
+        if ($value eq 'Test LS_XXX01') {
+                return 'Foo bar';
+        }
+        return;
+})."\n";
 
-# Output.
-# scalar
-# 1, 2
-# 0001
+# Output:
+# Foo: LS_XXX01
+# XXXBar: Test LS_XXX01
+# Bar: Foo bar
