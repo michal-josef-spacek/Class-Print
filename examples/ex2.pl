@@ -6,7 +6,7 @@ use warnings;
 
 # Modules.
 use Class::Print;
-use Dumpvalue;
+use Data::Printer;
 
 # Object.
 my $obj = Class::Print->new;
@@ -20,9 +20,9 @@ my @ret = $obj->print($example, [
 ]);
 
 # Dump out.
-my $dump = Dumpvalue->new;
-$dump->dumpValues(\@ret);
+p @ret;
 
 # Output:
-# 0  ARRAY(0x2580d00)
-#   0  'Identification: 0001'
+# [
+#     [0] "Identification: 0001"
+# ]

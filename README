@@ -61,7 +61,7 @@ EXAMPLE2
 
      # Modules.
      use Class::Print;
-     use Dumpvalue;
+     use Data::Printer;
 
      # Object.
      my $obj = Class::Print->new;
@@ -75,12 +75,12 @@ EXAMPLE2
      ]);
 
      # Dump out.
-     my $dump = Dumpvalue->new;
-     $dump->dumpValues(\@ret);
+     p @ret;
 
      # Output:
-     # 0  ARRAY(0x2580d00)
-     #   0  'Identification: 0001'
+     # [
+     #     [0] "Identification: 0001"
+     # ]
 
 DEPENDENCIES
     Class::Print::Utils, Class::Utils, Error::Pure, Indent, Scalar::Util.

@@ -3,8 +3,6 @@ TODO
 2. Pridat testy.
 3. Jak resit dedeni trid?
 5. Pridat SIGNATURE.
-6. V EXAMPLE2 v Class::Print predelat dump na neco, co vypisuje pole bez
-   nejakeho id.
 7.
 
 Applied
@@ -13,4 +11,8 @@ Applied
 OK [20130526] skim
 
 4. Pridat README
+OK [20140317] skim
+
+6. V EXAMPLE2 v Class::Print predelat dump na neco, co vypisuje pole bez
+   nejakeho id.
 OK [20140317] skim

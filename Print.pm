@@ -138,7 +138,7 @@ Class::Print - Perl class for helping of object information print.
 
  # Modules.
  use Class::Print;
- use Dumpvalue;
+ use Data::Printer;
 
  # Object.
  my $obj = Class::Print->new;
@@ -152,12 +152,12 @@ Class::Print - Perl class for helping of object information print.
  ]);
 
  # Dump out.
- my $dump = Dumpvalue->new;
- $dump->dumpValues(\@ret);
+ p @ret;
 
  # Output:
- # 0  ARRAY(0x2580d00)
- #   0  'Identification: 0001'
+ # [
+ #     [0] "Identification: 0001"
+ # ]
 
 =head1 DEPENDENCIES
 
