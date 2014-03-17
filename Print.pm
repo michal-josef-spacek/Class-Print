@@ -48,7 +48,7 @@ sub print {
 	foreach my $print_one_ar (@{$print_ar}) {
 		push @ret, print_one($object, @{$print_one_ar}, $indent);
 	}
-	return wantarray ? @ret : join $self->{'output_separator'}, @ret;
+	return wantarray ? @ret : join($self->{'output_separator'}, @ret);
 }
 
 1;
