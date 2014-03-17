@@ -10,6 +10,7 @@ abstract 'Perl class for helping of object information print.';
 author 'Michal Špaček <skim@cpan.org>';
 license 'bsd';
 name 'Class-Print';
+readme_from 'Print.pm';
 requires 'Error::Pure' => 0.09,
 requires 'Exporter' => 0;
 requires 'Indent' => 0.01;

@@ -9,6 +9,7 @@ inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
+inc/Module/Install/ReadmeFromPod.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 LICENSE
@@ -17,6 +18,7 @@ MANIFEST			This list of files
 META.yml
 Print.pm
 Print/Utils.pm
+README
 t/Class-Print-Utils/00-use.t
 t/Class-Print-Utils/01-version.t
 t/Class-Print-Utils/02-pod_coverage.t

@@ -1,0 +1,104 @@
+NAME
+    Class::Print - Perl class for helping of object information print.
+
+SYNOPSIS
+     use Class::Print;
+     my $obj = Class::Print->new(%parameters);
+     my @ret = $obj->print($object, $print_ar, $indent);
+
+METHODS
+    new(%parameters)
+             Constructor.
+
+            *       "output_separator"
+
+                     Output separator.
+                     Default value is newline (\n).
+
+    print($object, $print_ar, $indent)
+             Print object '$object' information defined in $print_ar.
+             $print_ar is reference to array of arrays with object keys and descriptions for print.
+             $indent is variable Indent object for indentation.
+             When $indent not possible, create use Indent->new.
+             Returns string with informations in scalar context.
+             Returns array with information lines in array context.
+
+ERRORS
+     new():
+             From Class::Utils::set_params():
+                     Unknown parameter '%s'.
+
+     print():
+             Bad Indent object.
+
+EXAMPLE1
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Class::Print;
+
+     # Object.
+     my $obj = Class::Print->new;
+
+     # Example class.
+     my $example = bless { 'id' => '0001' }, 'Example';
+
+     # Print out.
+     print scalar $obj->print($example, [
+             ['id', 'Identification'],
+     ]);
+     print "\n";
+
+     # Output:
+     # Identification: 0001
+
+EXAMPLE2
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Class::Print;
+     use Dumpvalue;
+
+     # Object.
+     my $obj = Class::Print->new;
+
+     # Example class.
+     my $example = bless { 'id' => '0001' }, 'Example';
+
+     # Get output.
+     my @ret = $obj->print($example, [
+             ['id', 'Identification'],
+     ]);
+
+     # Dump out.
+     my $dump = Dumpvalue->new;
+     $dump->dumpValues(\@ret);
+
+     # Output:
+     # 0  ARRAY(0x2580d00)
+     #   0  'Identification: 0001'
+
+DEPENDENCIES
+    Class::Print::Utils, Class::Utils, Error::Pure, Indent, Scalar::Util.
+
+SEE ALSO
+    Class::Print::Utils.
+
+AUTHOR
+    Michal Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+REPOSITORY
+    <https://github.com/tupinek/Class-Print>
+
+LICENSE AND COPYRIGHT
+    BSD license.
+
+VERSION
+    0.01
+

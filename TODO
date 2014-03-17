@@ -2,7 +2,6 @@ TODO
 ====
 2. Pridat testy.
 3. Jak resit dedeni trid?
-4. Pridat README
 5. Pridat SIGNATURE.
 6. V EXAMPLE2 v Class::Print predelat dump na neco, co vypisuje pole bez
    nejakeho id.
@@ -12,3 +11,6 @@ Applied
 =======
 1. Trida pro tisky jinych trid.
 OK [20130526] skim
+
+4. Pridat README
+OK [20140317] skim
